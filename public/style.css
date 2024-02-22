@@ -1,0 +1,92 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color for contrast */
+}
+
+/* Header styling */
+h1 {
+  color: #bb86fc; /* A lighter, purple-like color for headings */
+}
+
+/* Form styling */
+div {
+  margin-bottom: 20px;
+}
+
+select, input[type="text"], input[type="submit"], textarea {
+  padding: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #333; /* Darker elements background */
+  border: 1px solid #444; /* Slightly lighter border for contrast */
+  color: #e0e0e0; /* Light text */
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #3700b3; /* Darker purple for buttons */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6200ee; /* A bit lighter purple for hover state */
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  max-width: 600px; /* Adjust based on your preference */
+  height: 150px; /* Adjust based on your preference */
+  background-color: #252525; /* Even darker background for contrast */
+  resize: vertical;
+  overflow: auto;
+}
+
+/* Response container styling */
+#response {
+  background-color: #333; /* Dark background for response container */
+  color: #e0e0e0; /* Light text for readability */
+  border: 1px solid #555555; /* Slightly lighter border for definition */
+  width: 621px;
+  height: 171px;
+  padding: 2px;
+  margin-top: 10px;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+#status-code {
+  background-color: #333; /* Dark background for response container */
+  color: #e0e0e0; /* Light text for readability */
+  border: 1px solid #444; /* Slightly lighter border for definition */
+  padding: 2px;
+  visibility: hidden;
+}
+
+/* Scrollbar styling */
+/* The width and height properties should be adjusted based on your preferences */
+/* You can add additional vendor-specific prefixes for cross-browser compatibility if needed */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #252525; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Color of the scrollbar thumb on hover */
+}

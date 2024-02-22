@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REST API Tester</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1>REST API Tester</h1>
+
+  <form onsubmit="make_request(event)">
+    <div>
+      <select name="method" id="method" onchange="updateColor()">
+        <option value="GET" style="color: #4CAF50;">GET</option>
+        <option value="POST" style="color: #2196F3;">POST</option>
+        <option value="PUT" style="color: #FFC107;">PUT</option>
+        <option value="PATCH" style="color: #FF9800;">PATCH</option>
+        <option value="DELETE" style="color: #F44336;">DELETE</option>
+      </select>
+
+      <input type="text" name="url" id="url" placeholder="http://api/endpoint" required>
+      <input type="submit" id="send-btn" value="Send" required>
+      <span id="url-validation-message" class="validation-message"></span>
+
+    </div>
+    <div>
+      <p style="display: inline-block;">Body</p>
+
+      <select name="content-type" id="content-type">
+        <option value="Text">Text</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="JSON">JSON</option>
+        <option value="HTML">HTML</option>
+      </select>
+    </div>
+
+    <textarea 
+      type="textarea" name="body-content" 
+      id="body-content" rows="6" cols="50"
+      style="resize: none;"
+    ></textarea>
+  </form>
+
+  <div id="response-container">
+    <div style="width: 300px; display: flex; justify-content: space-between; align-items:center;">
+      <p>Response</p>
+      <p id="status-code"></p>
+    </div>
+
+    <div id="loading" style="display: none;">
+      Loading...
+    </div>
+  
+    <!-- Display response data -->
+    <div id="response" style="margin-top: 10px; white-space: pre-wrap;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
