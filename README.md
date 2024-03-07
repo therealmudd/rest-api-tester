@@ -15,7 +15,7 @@ It is inspired by [Postman](www.postman.com), but this is a simpler version.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/therealmudd/rest-api-tester/tree/main
+   git clone https://github.com/therealmudd/rest-api-tester/
    ```
 
 2. Navigate to the project directory:
