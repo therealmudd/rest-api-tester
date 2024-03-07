@@ -1,3 +1,22 @@
+function newTab(){
+  const newButton = document.createElement('button');
+  newButton.classList.add('tab');
+  newButton.innerText = "Untitled request";
+  document.getElementById("tabs").appendChild(newButton);
+}
+
+document.getElementById("url").addEventListener('input' ,() => {
+  const tabs = document.getElementById("tabs").children;
+  let url = document.getElementById("url").value;
+  for (let tab of tabs){
+    if (url.startsWith("http://") || url.startsWith("https://")) {
+      let text = url.replace("http://", "").replace("https://", "");    
+      tab.innerText = document.getElementById("method").value + " " + text || "Untitled request";
+    }
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   updateColor();
 });
@@ -52,29 +71,27 @@ function make_request(event){
 
   console.log(request_body);
 
-  fetch("http://localhost:5001/make-request", {
+  fetch("http://localhost:5123/make-request", {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(request_body),
   })
   .then(response => {
-    // Check for error response
-    if (!response.ok) {
-      console.log("HERE");
-      throw new Error(`Request failed with status ${response.status}`);
-    }
-
-    // Extract status code
-    document.getElementById("status-code").innerText = response.status || "-";
-    document.getElementById("status-code").style.visibility = "visible";
-
     // Handle response body
     return response.json();
   })
   .then(data => {
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
     // Format and display response body
     const responseContainer = document.getElementById("response");
-    responseContainer.innerText = JSON.stringify(data, null, 2);
+    responseContainer.innerText = JSON.stringify(data.response.data, null, 2);
+
+    // Extract status code
+    document.getElementById("status-code").innerText = data.response.status || "-";
+    document.getElementById("status-code").style.visibility = "visible";
 
     // Update UI for successful request
     updateUI(true);

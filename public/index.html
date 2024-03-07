@@ -11,6 +11,10 @@
 <body>
   <h1>REST API Tester</h1>
 
+  <div id="tabs">
+    <button class="tab">Untitled request</button></div><button class="tab new" onclick="newTab()">+</button>
+  <br />
+
   <form onsubmit="make_request(event)">
     <div>
       <select name="method" id="method" onchange="updateColor()">

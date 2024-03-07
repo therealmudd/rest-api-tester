@@ -12,13 +12,18 @@ h1 {
   color: #bb86fc; /* A lighter, purple-like color for headings */
 }
 
+#tabs {
+  display: inline;
+}
+
+
 /* Form styling */
 div {
   margin-bottom: 20px;
 }
 
-select, input[type="text"], input[type="submit"], textarea {
-  padding: 10px;
+select, input[type="text"], input[type="submit"], textarea, .tab{
+  padding: 10px 10px;
   margin-top: 5px;
   margin-right: 10px;
   border-radius: 5px;
@@ -27,6 +32,20 @@ select, input[type="text"], input[type="submit"], textarea {
   color: #e0e0e0; /* Light text */
   font-size: 16px;
 }
+
+.tab {
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
+#tabs .tab {
+  width: 200px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+}
+
 
 input[type="submit"] {
   background-color: #3700b3; /* Darker purple for buttons */
